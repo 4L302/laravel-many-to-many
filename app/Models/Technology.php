@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Technology extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['_token'];
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 }
